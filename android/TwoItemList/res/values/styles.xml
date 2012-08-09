@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+    <color name="item_background">#BDEDFF</color>
+
+</resources>
