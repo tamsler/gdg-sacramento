@@ -1,0 +1,5 @@
+db.addUser("raffleapp_user", "D3vf3st%")
+use raffleapp
+db.addUser("raffleapp_user", "D3vf3st%")
+db.raffle.insert({"name":"GDG Raffle"})
+db.raffle.insert({"name":"GDG Raffle 2"})
