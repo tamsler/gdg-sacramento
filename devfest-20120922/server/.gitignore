@@ -1,0 +1,16 @@
+# Node
+node_modules
+
+# Ignored Extensions
+*.diff
+*.log
+*.swp
+*.rej
+
+# IDEs
+.cache
+.project
+.settings
+.idea
+
+README.txt
