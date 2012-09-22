@@ -14,11 +14,13 @@ var server = restify.createServer({
     name : "Raffle App Server",
     version : "0.0.1-a"
 });
+
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.authorizationParser());
 server.use(restify.queryParser({ mapParams: false }));
 server.use(restify.jsonBodyParser({ mapParams: false }));
 
+server.get('/api/v1/hello', api.helloV1);
 server.post('/api/v1/user', api.postUserV1);
 
 /*
