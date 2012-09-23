@@ -4,23 +4,15 @@
 
 
 var mongodb = require('mongodb');
+var MONGO = require('config').DB;
 var db;
 
-/*
- * Get this from MongoLab
- */
-// var MONGO_DB = "raffleapp";
-// var MONGO_HOST = "localhost";
-// var MONGO_PORT = 27017;
-
-var MONGO = require('config').DB;
 
 /*
  * Creating a connection to the MongoDB and open it. The connection will be reused.
  */
 exports.init = function(callback) {
 
-    console.log("foo");
     db = new mongodb.Db(MONGO.DB, new mongodb.Server(MONGO.HOST, MONGO.PORT, {auto_reconnect:true}), {});
 
     db.open(function(err, p_client) {
