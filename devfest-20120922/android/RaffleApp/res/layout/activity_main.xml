@@ -23,14 +23,25 @@
         android:layout_below="@+id/et_raffle_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Button" />
+        android:text="Submit Raffle" />
 
-    <TextView
-        android:id="@+id/tv_raffle_data"
+    <EditText
+        android:id="@+id/et_raffle_ticket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/b_raffle_submit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Ticket" />
+
+    <Button
+        android:id="@+id/b_raffle_submit_ticket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_raffle_ticket"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Submit Ticket" />
 
 </RelativeLayout>

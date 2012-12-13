@@ -32,8 +32,12 @@ public interface AppConstants {
 	
 	// REST URLs
 	public static final String POST_RAFFLE = HOST + "/api/v1/raffle";
+	public static final String POST_TICKET = HOST + "/api/v1/ticket";
 	
 	// JSON Keys
 	public static final String RAFFLE_NAME = "raffle_name";
+	public static final String RAFFLE_ID = "raffle_id";
+	public static final String TICKET_NAME = "user_name";
+	public static final String RAFFLE_JSON_ID = "_id";
 
 }

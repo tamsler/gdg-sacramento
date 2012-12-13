@@ -3,5 +3,10 @@
     <string name="app_name">RaffleApp</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="create_raffle">Created Raffle</string>
+    <string name="enter_ticket">Entered Ticket</string>
+    <string name="raffle_name">Raffle name cannot be empty</string>
+    <string name="ticket_name">Ticket name cannot be emtpy</string>
+    <string name="define_raffle">Please create a raffle first</string>
 
 </resources>
