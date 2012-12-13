@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app>
+  <head>
+  	<title>Raffle Application</title>
+    <link href='/css/main.css' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="/js/RaffleController.js"></script>
+  </head>
+  <body ng-controller="RaffleController">
+
+  	<div class="title">
+  		<h1>Raffle Application</h1>
+  	</div>
+  	
+  	<div class="create_raffle">
+  		<input type="text" ng-model="raffle.raffle_name" placeholder="Enter raffle name">
+  		<button ng-click="createRaffle()">Create</button>
+  	</div>
+    
+    <div  class="raffles">
+      <div ng-repeat="raffle in raffles" ng-click="selectRaffle(raffle._id)">
+        {{raffle.name}}
+     </div>
+    </div>
+    
+  </body>
+</html>

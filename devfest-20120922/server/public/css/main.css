@@ -1,0 +1,22 @@
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.title h1 {
+	text-align: center;
+}
+
+.raffles div {
+	position: relative;
+	width: 400px;
+	height: 40px;
+	left: 50%;
+	line-height: 2.5em;
+	margin-left: -200px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #cde6ff;
+	border-radius: 5px;
+	margin-bottom: 2px;
+}

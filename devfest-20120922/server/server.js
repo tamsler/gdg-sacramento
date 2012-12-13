@@ -1,6 +1,7 @@
 
 var restify = require('restify');
 var api = require('./lib/api');
+var www = require('./lib/www');
 var mongo = require('./lib/mongo');
 
 
@@ -44,8 +45,13 @@ server.get('/api/v1/winner/:id', api.getWinnerV1);
  *
  * TEST: curl -i -X GET localhost:8080/api/v1/raffle
  */
- server.get('/api/v1/raffle', api.getRaffleV1);
- 
+server.get('/api/v1/raffle', api.getRaffleV1);
+
+
+/*
+ * Serve static content
+ */ 
+ server.get('\/.*', www.serveV1);
 
 mongo.init(function() {
 
