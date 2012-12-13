@@ -39,6 +39,14 @@ server.post('/api/v1/ticket', api.postTicketV1);
  */
 server.get('/api/v1/winner/:id', api.getWinnerV1);
 
+/*
+ * Get the list of raffles
+ *
+ * TEST: curl -i -X GET localhost:8080/api/v1/raffle
+ */
+ server.get('/api/v1/raffle', api.getRaffleV1);
+ 
+
 mongo.init(function() {
 
     console.log("INFO: MongoDB is ready");

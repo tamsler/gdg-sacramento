@@ -4,11 +4,11 @@
   },
   "version": "0.0.1",
   "engines": {
-    "node": "0.6.x"
+    "node": "0.8.x"
   },
   "dependencies": {
     "config": "0.4.x",
     "restify": "1.4.x",
-    "mongodb": "1.1.x"
+    "mongodb": "1.2.x"
   }
 }

@@ -107,6 +107,29 @@ function getWinnerV1(req, res, next) {
 }
 
 /*
+ * Return raffle documents
+ */
+ function getRaffleV1(req, res, next) {
+
+    mongo.collection(COLLECTION_NAME, function(collection) {
+
+        var cursor = collection.find({}).limit(100);
+
+        cursor.toArray(function(err, result) {
+
+            if(err) {
+
+                res.send(500);
+            }
+            else {
+
+                res.json(200, result);
+            }
+        });
+    });
+ }
+
+/*
  * http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
  */
 function fisherYates ( myArray ) {
@@ -129,9 +152,12 @@ function fisherYates ( myArray ) {
     }
 }
 
+
+
 /*
  * Export functions
  */
 exports.postRaffleV1 = postRaffleV1;
 exports.postTicketV1 = postTicketV1;
 exports.getWinnerV1 = getWinnerV1;
+exports.getRaffleV1 = getRaffleV1;

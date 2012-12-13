@@ -2,20 +2,28 @@
  * Author: Thomas Amsler : tamsler@gmail.com
  */
 
-
+var MONGO = require('config').MONGO;
 var mongodb = require('mongodb');
-var MONGO = require('config').DB;
 var db;
-
 
 /*
  * Creating a connection to the MongoDB and open it. The connection will be reused.
  */
 exports.init = function(callback) {
 
-    db = new mongodb.Db(MONGO.DB, new mongodb.Server(MONGO.HOST, MONGO.PORT, {auto_reconnect:true}), {});
-
-    db.open(function(err, p_client) {
+    mongodb.MongoClient.connect(MONGO.URL_CONNECTION,
+    {
+        db: {
+            native_parser: false,
+            w: 1
+        },
+        server: {
+            auto_reconnect: true
+        },
+        replSet: {},
+        mongos: {}
+    },
+    function(err, newDb) {
 
         if(err) {
 
@@ -23,17 +31,8 @@ exports.init = function(callback) {
         }
         else {
 
-           db.authenticate(MONGO.USER, MONGO.PASSWORD, function(err) {
-
-               if (err) {
-
-                   console.log("ERROR: db.authenticate : err = " + err.message);
-               }
-               else {
-
-                   callback();
-               }
-           });
+            db = newDb;
+            callback();
         }
     });
 };
@@ -43,7 +42,7 @@ exports.init = function(callback) {
  */
 exports.collection = function(collectionName, callback) {
 
-    db.collection(collectionName, {safe:true}, function(err, collection) {
+    db.collection(collectionName, function(err, collection) {
 
         if(err) {
 
@@ -67,11 +66,6 @@ exports.objectID = function(hexId) {
 
         return new mongodb.ObjectID();
     }
-}
+};
 
 exports.db = db;
-
-
-
-
-
