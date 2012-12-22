@@ -51,7 +51,7 @@ server.get('/api/v1/raffle', api.getRaffleV1);
 /*
  * Serve static content
  */ 
- server.get('\/.*', www.serveV1);
+server.get('\/.*', www.serveV1);
 
 mongo.init(function() {
 
