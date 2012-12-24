@@ -2,6 +2,7 @@
   "scripts": {
     "start": "server.js"
   },
+  "name":"devfest-20120922",
   "version": "0.0.1",
   "engines": {
     "node": "0.8.x"
