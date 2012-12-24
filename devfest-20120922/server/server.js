@@ -32,6 +32,15 @@ server.post('/api/v1/raffle', api.postRaffleV1);
 server.post('/api/v1/ticket', api.postTicketV1);
 
 /*
+ * Delete a raffle entry
+ * URL parameter:
+ * :id = Raffle Id
+ *
+ * TEST: curl
+ */
+server.del('/api/v1/raffle/:id', api.deleteRaffleV1);
+
+/*
  * Get a list of all participants. The order of particpants determins winner(s)
  * URL parameter:
  * :id = Raffle ID

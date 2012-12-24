@@ -39,6 +39,39 @@ function postRaffleV1(req, res, next) {
     });
 }
 
+/*
+ * deletes a raffle
+ */
+function deleteRaffleV1(req, res, next) {
+
+    if(!req.params.id) {
+
+        console.log("ERROR: Missing url parameter id");
+        res.send(404);
+        return next();
+    }
+
+    mongo.collection(COLLECTION_NAME, function(collection) {
+
+        var objectId = mongo.objectID(req.params.id);
+
+        collection.remove({_id : objectId}, function(err, doc) {
+
+            if(err) {
+
+                res.send(500);
+            }
+            else {
+
+                res.send(200);
+            }
+
+            return next();
+        });
+
+    });
+}
+
 function postTicketV1(req, res, next) {
 
     if(!req.body || !req.body.raffle_id || !req.body.user_name) {
@@ -161,3 +194,4 @@ exports.postRaffleV1 = postRaffleV1;
 exports.postTicketV1 = postTicketV1;
 exports.getWinnerV1 = getWinnerV1;
 exports.getRaffleV1 = getRaffleV1;
+exports.deleteRaffleV1 = deleteRaffleV1;

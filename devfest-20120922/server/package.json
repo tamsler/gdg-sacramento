@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "server.js"
+    "start": "server.js",
+    "test": "./node_modules/.bin/mocha"
   },
   "name":"devfest-20120922",
   "version": "0.0.1",
@@ -11,5 +12,10 @@
     "config": "0.4.x",
     "restify": "1.4.x",
     "mongodb": "1.2.x"
+  },
+  "devDependencies": {
+    "mocha": "1.7.x",
+    "request": "2.12.x",
+    "should": "1.2.x"
   }
 }
