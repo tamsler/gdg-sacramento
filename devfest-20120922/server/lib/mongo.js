@@ -27,7 +27,7 @@ exports.init = function(callback) {
 
         if(err) {
 
-            console.log("ERROR: db.open : err = " + err.message);
+            console.log("ERROR: db.open : err = " + err.message+" URL_CONNECTION is "+MONGO.URL_CONNECTION);
         }
         else {
 

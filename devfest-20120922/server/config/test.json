@@ -1,0 +1,9 @@
+
+    {
+      "MONGO": {
+        "URL_CONNECTION":"mongodb://localhost/raffleappTest"
+      },
+      "SERVER": {
+        "PORT":9090
+      }
+    }

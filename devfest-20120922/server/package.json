@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "server.js",
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha --globals NODE_CONFIG"
   },
   "name":"devfest-20120922",
   "version": "0.0.1",

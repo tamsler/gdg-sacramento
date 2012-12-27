@@ -3,6 +3,7 @@ var restify = require('restify');
 var api = require('./lib/api');
 var www = require('./lib/www');
 var mongo = require('./lib/mongo');
+var SERVER = require('config').SERVER;
 
 
 var server = restify.createServer({
@@ -62,16 +63,27 @@ server.get('/api/v1/raffle', api.getRaffleV1);
  */ 
 server.get('\/.*', www.serveV1);
 
-mongo.init(function() {
+exports.start = function(readyCallback) {
+    mongo.init(function() {
 
-    console.log("INFO: MongoDB is ready");
+        console.log("INFO: MongoDB is ready");
 
-    /*
-     * Starting the server
-     */
-    server.listen(process.env.VCAP_APP_PORT || 8080, "0.0.0.0", function () {
-        console.log('%s listening at %s', server.name, server.url);
+        /*
+         * Starting the server
+         */
+        server.listen(SERVER.PORT, SERVER.HOSTNAME, function () {
+            console.log('%s listening at %s', server.name, server.url);
+
+            // callback to call when the server is ready
+            if(readyCallback) {
+                readyCallback();
+            }
+        });
     });
-});
+};
+
+exports.close = function() {
+    server.close();
+};
 
 

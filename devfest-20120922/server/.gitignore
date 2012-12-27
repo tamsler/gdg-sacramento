@@ -14,4 +14,6 @@ node_modules
 .idea
 
 README.txt
-config
+config/runtime.json
+config/production.json
+
