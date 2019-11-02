@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "mocha": "1.7.x",
-    "request": "2.12.x",
+    "request": "2.88.x",
     "should": "1.2.x"
   }
 }
