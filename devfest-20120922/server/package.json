@@ -11,7 +11,7 @@
   "dependencies": {
     "config": "0.4.x",
     "restify": "1.4.x",
-    "mongodb": "1.2.x"
+    "mongodb": "3.6.x"
   },
   "devDependencies": {
     "mocha": "1.7.x",
